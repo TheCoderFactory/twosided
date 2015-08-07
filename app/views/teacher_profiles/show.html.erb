@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <%= cl_image_tag(@teacher_profile.profile_pic, :width => 450, :height => 250, :crop => :thumb, :gravity => :faces) %>
+        <span class="card-title"><%= @teacher_profile.full_name %></span>
+      </div>
+      <div class="card-content">
+        
+        <h4>Bio</h4>
+        <p><%= @teacher_profile.bio ? @teacher_profile.bio : 'No bio given' %></p>
+        
+        
+      </div>
+      <div class="card-action">
+        <%= link_to 'Edit your profile', edit_teacher_profile_path(@teacher_profile) %>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content">
+        <h4>School</h4>
+        <% if @school %>
+          
+          <p><%= link_to @school.name, school_path(@school) %></p>
+        <% else %>
+          <p>No school connected
+          <a href="/schools" class="btn-floating btn-large waves-effect waves-light right <%= current_user.teacher_profile.school ? 'green' : 'red' %>"><i class="material-icons">add</i></a></p>
+          <br>
+        <% end %>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Edit', schools_path %>
+      </div>
+    </div>
+</div>
+
+
+

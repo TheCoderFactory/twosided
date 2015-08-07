@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,7 +42,7 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'materialize-sass'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select'
@@ -57,6 +56,9 @@ gem 'sitemap_generator'
 gem 'whenever', require: false
 gem 'sucker_punch', '~> 1.0'
 gem 'newrelic_rpm'
+gem 'groupdate'
+gem 'geocoder'
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'

@@ -1,0 +1,9 @@
+<h2>Connect to your school</h2>
+
+
+
+<% if @schools.present? %>
+  <%= render @schools %>
+<% else %>
+  <p>There are no schools containing the term(s) <%= params[:search] %>.</p>
+<% end %>

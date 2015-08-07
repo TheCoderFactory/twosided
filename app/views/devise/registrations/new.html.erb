@@ -1,0 +1,22 @@
+<div id="login-page">
+	  	<div class="container">
+	  	
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-login' }) do |f| %>
+	<h2 class="form-login-heading">Register<br>as a <%= params[:user_type] %></h2>
+  	<%= f.error_notification %>
+
+  <div class="login-wrap">
+    <%= f.input :email, label: 'Your email', required: true, autofocus: true %>
+    <%= f.input :password, label: 'Choose a password', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <% if params[:user_type] %>
+    	<%= f.input :user_type, input_html: { value: params[:user_type]} %>
+    <% end %>
+    <%= f.button :submit, "Register", class: 'btn btn-theme btn-block' %>
+	<hr>
+	<p>Or <%= render "devise/shared/links" %></p>
+  </div>
+<% end %>
+
+</div>
+</div>

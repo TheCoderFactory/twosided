@@ -1,0 +1,33 @@
+<%= simple_form_for(@teacher_profile) do |f| %>
+  <%= f.error_notification %>
+
+<div class="row">
+  <div class="input-field col s6">
+    <%= f.input :first_name %>
+  </div>
+  <div class="input-field col s6">
+    <%= f.input :last_name %>
+  </div>
+</div>
+    
+<div class="row">
+  <div class="input-field col s6">
+    <%= f.input :contact_phone %>
+  </div>
+  <div class="input-field col s6">
+    <%= f.input :profile_pic %>
+  </div>
+</div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea  name="teacher_profile[bio]" id="teacher_profile_bio" class="materialize-textarea"></textarea>
+          <label for="textarea1">Bio</label>
+        </div>
+      </div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Create your profile
+    <!-- <i class="material-icons">send</i> -->
+  </button>
+
+<% end %>

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @project.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @project.end_date %>
+</p>
+
+<p>
+  <strong>Flexible dates:</strong>
+  <%= @project.flexible_dates %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @project.days %>
+</p>
+
+<p>
+  <strong>Student description:</strong>
+  <%= @project.student_description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @project.address %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @project.suburb %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @project.postcode %>
+</p>
+
+<p>
+  <strong>Pay per hour:</strong>
+  <%= @project.pay_per_hour %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

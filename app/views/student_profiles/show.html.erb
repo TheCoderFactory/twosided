@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <%= cl_image_tag(@student_profile.profile_pic, :width => 450, :height => 250, :crop => :thumb, :gravity => :faces) %>
+        <span class="card-title"><%= @student_profile.full_name %></span>
+      </div>
+      <div class="card-content">
+        <h4>Bio</h4>
+        <p><%= @student_profile.bio.nil? ? @student_profile.bio : 'No bio given' %></p>
+        <p><strong>Website/Blog: </strong><a href="<%= @student_profile.website_url %>" target="_blank"><%= @student_profile.website_url %></a></p>
+        
+      </div>
+      <div class="card-action">
+        <%= link_to 'Edit', edit_student_profile_path(@student_profile) %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <h4>References</h4>
+        <p>No references yet
+        </p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Apply for a project', edit_student_profile_path(@student_profile) %>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content">
+        <h4>Requirements</h4>
+        <p>
+          <strong>Working with children number:</strong>
+          <%= @student_profile.working_with_children_number %>
+        </p>
+
+        <p>
+          <strong>Induction:</strong>
+          <%= @student_profile.induction %>
+        </p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Edit', edit_student_profile_path(@student_profile) %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        
+          <h4>Study</h4>
+          <p><strong>University/College: </strong> <%= @student_profile.institution %></p>
+          <p><strong>Degree: </strong> <%= @student_profile.degree %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Edit', edit_student_profile_path(@student_profile) %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        
+        <h4>Contact details </h4>
+        <p>(not public)</p>
+        <div class="row">
+          <div class="col s12 m6">
+            <h5>Address</h5>
+            <p>
+              <%= @student_profile.address_line_1 %><br>
+              <% unless @student_profile.address_line_2.empty? %>
+                <%= @student_profile.address_line_2 %><br>
+              <% end %>
+              <%= @student_profile.suburb.to_s + ' ' + @student_profile.state.to_s + ' ' + @student_profile.postcode.to_s %><br>
+            </p>
+          </div>
+          <div class="col s12 m6">
+            <h5>Phone</h5>
+            <p><%= @student_profile.contact_number %></p>
+          </div>
+        </div>
+      </div>
+        <div class="card-action">
+        <%= link_to 'Edit', edit_student_profile_path(@student_profile) %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

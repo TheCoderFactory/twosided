@@ -1,0 +1,25 @@
+<li class="bold <%= 'active' if current_page?(root_path) %> "><%= link_to '<span class="blue-text"><i class="medium material-icons left">dashboard</i></span> Dashboard'.html_safe, root_path %></li>
+<% if current_user.teacher_profile %>
+<li class="bold <%= 'active' if controller_name == 'teacher_profiles' %>"><%= link_to '<span class="blue-text"><i class="medium material-icons left">person</i></span> Profile'.html_safe, teacher_profile_path(current_user.teacher_profile) %></li>
+<li class="bold"><%= link_to '<span class="blue-text"><i class="medium material-icons left">dns</i></span> Projects'.html_safe, teacher_profile_path(current_user.teacher_profile) %></li>
+<li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="#!">First</a></li>
+              <li><a href="#!">Second</a></li>
+              <li><a href="#!">Third</a></li>
+              <li><a href="#!">Fourth</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+<li><%= link_to '<span class="blue-text"><i class="medium material-icons left">view_list</i></span> Completed'.html_safe, teacher_profile_path(current_user.teacher_profile) %></li>
+<li><%= link_to teacher_profile_path(current_user.teacher_profile) do %>
+<span class="blue-text"><i class="medium material-icons left">comment</i></span> Messages
+<% end %>
+</li>
+<% end %>

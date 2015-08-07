@@ -1,0 +1,59 @@
+@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
+@import 'materialize';
+@import 'form';
+
+.blue-container {
+    @extend .blue, .lighten-2;
+  }
+ .lime-container {
+ 	@extend .lime, .lighten-2;
+ }
+.teal-container {
+    @extend .teal, .lighten-2;
+  }
+.black-container {
+	@extend .yellow, .lighten-4;
+}
+nav.top-nav {
+    box-shadow: none;
+}
+
+nav.top-nav a.page-title {
+    line-height: 122px;
+    font-size: 48px;
+}
+@media only screen and (min-width: 993px) {
+.container {
+    width: 85%;
+}}
+ul.side-nav.fixed li.logo {
+    text-align: center;
+    /*margin-top: 32px;*/
+    margin-bottom: 32px;
+    border-bottom: 1px solid #ddd;
+}
+.parallax-container {
+      height: 300px;
+    }
+body {
+    background: #EEE;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+#left-panel {
+	height: 100%;
+}
+main {
+  flex: 1 0 auto;
+}
+header, main, footer {
+	padding-left: 240px;
+	}
+
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+  }

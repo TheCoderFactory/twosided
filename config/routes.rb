@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :projects
+  resources :teacher_profiles
+  resources :schools
+  resources :student_profiles
   get 'admin', to: 'pages#admin'
   get 'contact', to: 'pages#contact'
   root 'pages#home'
   get 'pages/home'
-
+  patch 'connect_your_school', to: 'teacher_profiles#connect_your_school'
   get 'pages/admin'
 
   get 'pages/contact'
